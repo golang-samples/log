@@ -7,6 +7,7 @@ import (
 
 func main() {
 	l3, err := syslog.New(syslog.LOG_ERR, "GoExample")
+	//l3, err := syslog.Dial("udp", "localhost", syslog.LOG_ERR, "GoExample") // connection to a log daemon
 	defer l3.Close()
 	if err != nil {
 		log.Fatal("error")
